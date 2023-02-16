@@ -1,22 +1,23 @@
-package com.example.Reward.entity;
+package com.example.Reward.model;
 
-import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Getter
 @Setter
-@Builder
-public class Transaction {
+public class Transaction{
 
     private int id;
     private int customerId;
-    private Date date;
+    private String date;
     private double amount;
 
-    public Transaction(int id, int customerId, Date date, double amount){
+    private SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+
+    public Transaction(int id, int customerId, String date, double amount){
         this.id = id;
         this.customerId = customerId;
         this.date = date;
